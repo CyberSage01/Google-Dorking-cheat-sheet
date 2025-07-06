@@ -1,0 +1,125 @@
+Google Dorking Cheatsheet - CyberSage Tech Edition
+
+Google Dorking lets you use advanced search operators to uncover hidden or exposed data on the internet. Below are powerful and ethical search queries you can use for OSINT, bug bounty, or awareness training.
+
+
+---
+
+🔎 Basic Syntax
+
+site: — Search within a specific domain.
+
+inurl: — Search URLs containing a specific string.
+
+intitle: — Search pages with keywords in the title.
+
+filetype: — Search for specific file extensions.
+
+ext: — Same as filetype.
+
+intext: — Search for a keyword in the body of the page.
+
+cache: — View the cached version of a page.
+
+
+
+---
+
+🧾 Sensitive File Exposure
+
+site:gov filetype:xls password
+
+intitle:index.of passwd
+
+inurl:wp-content/uploads filetype:pdf
+
+ext:log site:*.ng  (Nigeria-specific log files)
+
+filetype:env DB_PASSWORD
+
+
+
+---
+
+🗄️ Login Pages / Admin Panels
+
+inurl:admin login
+
+intitle:Login Panel
+
+inurl:wp-login.php
+
+site:example.com intitle:"admin"
+
+
+
+---
+
+📷 Exposed Cameras / IOT
+
+intitle:"webcamXP 5"
+
+inurl:view/index.shtml
+
+inurl:top.htm inurl:currenttime (CCTV interface)
+
+
+
+---
+
+💬 Exposed Docs and Credentials
+
+filetype:txt site:pastebin.com password
+
+filetype:pdf confidential site:gov.ng
+
+filetype:docx site:*.edu cv
+
+
+
+---
+
+🏢 Company OSINT
+
+site:linkedin.com/in "company name" (for employee discovery)
+
+site:github.com "company name" password
+
+inurl:/uploads/resume filetype:pdf
+
+
+
+---
+
+🕸️ Subdomains and Site Structure
+
+site:*.example.com -www (subdomain discovery)
+
+site:example.com inurl:/admin
+
+
+
+---
+
+🌍 Country-Specific Targets
+
+site:*.ng filetype:pdf salary
+
+inurl:/admin/login site:.edu.ng
+
+filetype:xls intext:"username" site:.gov.ng
+
+
+
+---
+
+🚫 Warning
+
+Only use these queries for ethical and legal purposes — such as educational learning, CTFs, bug bounty programs, or awareness demos. Never attempt unauthorized access or collect sensitive data.
+
+
+---
+
+CyberSage Tip: "With great queries comes great responsibility. Be the ghost that protects, not the one that haunts."
+
+> CyberSage
